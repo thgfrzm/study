@@ -97,6 +97,7 @@ section#logo strong {
 .colorfulbg {
   background-image: linear-gradient(to right, #d75c4d, #d86950, #d97654, #da8259, #da8d60, #cf9159, #c39555, #b69953, #969649, #749348, #4c8e4e, #02875a);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
