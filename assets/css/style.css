@@ -32,6 +32,15 @@
 /* ---- general ---------------------------------------- */
 html {
   font-family: 'Titillium Web', sans-serif;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
@@ -40,23 +49,33 @@ body {
   background: var(--color-mine-shaft);
 }
 
+
+
 header {
   height: 4rem;
   width: 100%;
   z-index: var(--z-index-header);
 }
 
+/* main {
+  color: var(--color-seashell);
+  background: var(--color-mine-shaft);
+} */
+
 footer {
-  height: 4rem;
+  /* height: 4rem; */
   width: 100%;
   z-index: var(--z-index-footer);
 }
+
+
 
 h1 {
   font-family: 'Titillium Web';
   font-weight: var(--font-weight-bold);
   margin-bottom: 2rem;
 }
+
 
 /* ---- articles --------------------------------------- */
 article h2 {
@@ -68,6 +87,7 @@ article h2 {
 article p {
   font-family: 'Titillium Web';
 }
+
 
 /* ---- article: colors -------------------------------- */
 article#color-palettes section {
@@ -100,6 +120,7 @@ article#color-palettes li {
 article#color-palettes li P {
   margin: 0;
 }
+
 
 /* ---- article: logo ---------------------------------- */
 article#logo section {
@@ -148,5 +169,32 @@ article#logo span {
   -webkit-text-fill-color: transparent;
 }
 
+
+/* ---- signature -------------------------------------- */
+div#signature {
+  font-family: 'Titillium Web';
+  font-weight: var(--font-weight-bold);
+  font-size: 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding: .75rem 1.5rem;
+  opacity: .1;
+}
+
+
+/* ---- DEV_MODE --------------------------------------- */
+
 /* *, *::before, *::after { outline: solid 1px magenta } */
 /* article#logo * { outline: solid 1px magenta } */
+
+/* .bg-blueprint {
+  background: slateblue;
+  background-image:
+    linear-gradient(rgba(255,255,255,.2) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,.2) 2px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+} */
