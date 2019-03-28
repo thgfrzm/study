@@ -29,3 +29,4 @@ Types of changes
 - article: typography
 - article: colors
 - article: logotype
+- signature
