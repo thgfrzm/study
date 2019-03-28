@@ -104,12 +104,13 @@ article#color-palettes li P {
 /* ---- article: logo ---------------------------------- */
 article#logo section {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
   padding: 0;
 }
 
 article#logo ul {
-  flex-basis: 50%;
+  /* flex-basis: 33%; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -119,15 +120,9 @@ article#logo ul {
   margin: 0;
 }
 
-article#logo ul:first-child {
-  color: var(--color-tundora);
-  background: var(--color-seashell);
-}
-
-article#logo ul:last-child {
-  color: var(--color-silver);
-  background: var(--color-mine-shaft);
-}
+article#logo ul:nth-child(1) { background: var(--color-seashell) }
+article#logo ul:nth-child(2) { background: var(--color-mine-shaft) }
+article#logo ul:nth-child(3) { background: var(--color-whiskey) }
 
 article#logo li {
   display: flex;
@@ -140,7 +135,7 @@ article#logo li {
 article#logo span {
   font-family: 'Titillium Web';
   font-weight: var(--font-weight-bold);
-  font-size: 3rem;
+  font-size: 2rem;
 
 }
 
@@ -152,4 +147,4 @@ article#logo span {
 }
 
 /* *, *::before, *::after { outline: solid 1px magenta } */
-article#logo * { outline: solid 1px magenta }
+/* article#logo * { outline: solid 1px magenta } */
