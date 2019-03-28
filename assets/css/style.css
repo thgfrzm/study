@@ -120,9 +120,11 @@ article#logo ul {
   margin: 0;
 }
 
-article#logo ul:nth-child(1) { background: var(--color-seashell) }
-article#logo ul:nth-child(2) { background: var(--color-mine-shaft) }
+article#logo ul:nth-child(1) { background: #FFFFFF }
+article#logo ul:nth-child(2) { background: var(--color-seashell) }
 article#logo ul:nth-child(3) { background: var(--color-whiskey) }
+article#logo ul:nth-child(4) { background: var(--color-mine-shaft) }
+article#logo ul:nth-child(5) { background: #000000 }
 
 article#logo li {
   display: flex;
