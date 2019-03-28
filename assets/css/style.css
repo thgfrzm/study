@@ -1,23 +1,67 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700,900');
 
+/* ---- css variables ---------------------------------- */
+:root {
+  --color-seashell	     : #f1f1f1;
+  --color-silver         : #bebebe;
+  --color-dove-gray      : #737373;
+  --color-tundora        : #404040;
+  --color-mine-shaft     : #262626;
+  --color-watercourse    : #057253;
+  --color-deepsea        : #02875a;
+  --color-whiskey        : #da9c6b;
+  --color-crail          : #c16341;
+  --color-red-damask     : #d75c4d;
+  --font-weight-extra-light : 200;
+  --font-weight-light       : 300;
+  --font-weight-regular     : 400;
+  --font-weight-semi-bold   : 600;
+  --font-weight-bold        : 700;
+  --font-weight-black       : 900;
+  --z-in-development   :1000;
+  --z-index-modal 	   : 900;
+  --z-index-overlay    : 800;
+  --z-index-dropdown   : 700;
+  --z-index-header     : 600;
+  --z-index-footer     : 500;
+  --z-index-popup 	   : 400;
+  --z-index-body 	     : 100;
+}
+
+
+/* ---- general ---------------------------------------- */
 html {
   font-family: 'Titillium Web', sans-serif;
 }
 
 body {
-  background: whitesmoke;
+  z-index: var(--z-index-body);
+  color: var(--color-seashell);
+  background: var(--color-mine-shaft);
+}
+
+header {
+  height: 4rem;
+  width: 100%;
+  z-index: var(--z-index-header);
+}
+
+footer {
+  height: 4rem;
+  width: 100%;
+  z-index: var(--z-index-footer);
 }
 
 h1 {
   font-family: 'Titillium Web';
-  font-weight: 900;
+  font-weight: var(--font-weight-bold);
   margin-bottom: 2rem;
 }
 
 /* ---- articles --------------------------------------- */
 article h2 {
   font-family: 'Titillium Web';
-  font-weight: 700;
+  font-weight: var(--font-weight-regular);
   margin-bottom: 1.5rem;
 }
 
@@ -26,56 +70,66 @@ article p {
 }
 
 /* ---- article: colors -------------------------------- */
-section#color-palettes {
+article#color-palettes section {
   display: flex;
   flex-flow: column nowrap;
 }
 
-section#color-palettes ul {
+article#color-palettes ul {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: center;
   margin-bottom: 1rem;
   list-style: none;
   padding: 0;
+  margin-bottom: 1.5rem;
 }
 
-section#color-palettes li {
+article#color-palettes li {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
-  flex-basis: 8rem;
+  width: 8rem;
   height: 8rem;
   padding: 1rem;
   font-weight: 600;
-  color: #F1F1F1;
+  color: var(--color-seashell);
 }
 
-section#color-palettes li P {
+article#color-palettes li P {
   margin: 0;
 }
 
 /* ---- article: logo ---------------------------------- */
-section#logo ul {
+article#logo section {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  list-style: none;
+  flex-direction: row;
   padding: 0;
 }
 
-section#logo ul:first-child {
-  background:#F1F1F1;
-  color: #404040;
+article#logo ul {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-section#logo ul:last-child {
-  background: #262626;
-  color: #BEBEBE;
+article#logo ul:first-child {
+  color: var(--color-tundora);
+  background: var(--color-seashell);
 }
 
-section#logo li {
+article#logo ul:last-child {
+  color: var(--color-silver);
+  background: var(--color-mine-shaft);
+}
+
+article#logo li {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -83,22 +137,19 @@ section#logo li {
   padding: 1rem;
 }
 
-section#logo span {
+article#logo span {
   font-family: 'Titillium Web';
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: 3rem;
 
 }
 
-section#logo strong {
-  font-weight: 900;
-}
-
 .colorfulbg {
   background-image: linear-gradient(to right, #d75c4d, #d86950, #d97654, #da8259, #da8d60, #cf9159, #c39555, #b69953, #969649, #749348, #4c8e4e, #02875a);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* section#logo * { outline: solid 1px magenta } */
+/* *, *::before, *::after { outline: solid 1px magenta } */
+article#logo * { outline: solid 1px magenta }
