@@ -76,6 +76,10 @@ h1 {
   margin-bottom: 2rem;
 }
 
+strong {
+  font-weight: var(--font-weight-black);
+}
+
 
 /* ---- articles --------------------------------------- */
 article h2 {
@@ -158,8 +162,7 @@ article#logo li {
 article#logo span {
   font-family: 'Titillium Web';
   font-weight: var(--font-weight-bold);
-  font-size: 2rem;
-
+  font-size: 1.5rem;
 }
 
 .colorfulbg {
@@ -182,6 +185,9 @@ div#signature {
   opacity: .1;
 }
 
+#signature a {
+  text-decoration: none;
+}
 
 /* ---- DEV_MODE --------------------------------------- */
 
