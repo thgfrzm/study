@@ -1,7 +1,42 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700,900');
 
+@font-face {
+  font-family: "Redacted Regular";
+  src: url("../fonts/redacted-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Redacted Script";
+  src: url("../fonts/redacted-script-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Redacted Script";
+  font-weight: 300;
+  src: url("../fonts/redacted-script-light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Redacted Script";
+  font-weight: 700;
+  src: url("../fonts/redacted-script-bold.woff2") format("woff2");
+}
+
 /* ---- css variables ---------------------------------- */
 :root {
+  /* -- layout --------------------- */
+  --layer-development :1000;
+  --layer-modal 	    : 900;
+  --layer-overlay     : 800;
+  --layer-dropdown    : 700;
+  --layer-header      : 600;
+  --layer-footer      : 500;
+  --layer-popup 	    : 400;
+  --layer-body 	      : 100;
+  box-sizing: border-box;
+  /* -- fonts ---------------------- */
+  font-family: 'Titillium Web', sans-serif;
+  /* -- style ---------------------- */
   --color-seashell	     : #f1f1f1;
   --color-silver         : #bebebe;
   --color-dove-gray      : #737373;
@@ -12,108 +47,106 @@
   --color-whiskey        : #da9c6b;
   --color-crail          : #c16341;
   --color-red-damask     : #d75c4d;
-  --font-weight-extra-light : 200;
-  --font-weight-light       : 300;
-  --font-weight-regular     : 400;
-  --font-weight-semi-bold   : 600;
-  --font-weight-bold        : 700;
-  --font-weight-black       : 900;
-  --z-in-development   :1000;
-  --z-index-modal 	   : 900;
-  --z-index-overlay    : 800;
-  --z-index-dropdown   : 700;
-  --z-index-header     : 600;
-  --z-index-footer     : 500;
-  --z-index-popup 	   : 400;
-  --z-index-body 	     : 100;
 }
 
+
+/* ---- DEV_MODE --------------------------------------- */
+/* *, *::before, *::after { outline: solid 1px cyan } */
+
+.prototype {
+  font-family: 'Redacted Regular';
+  color: var(--color-silver);
+  line-height: 1.5rem;
+}
+
+.prototype-script {
+  font-family: 'Redacted Script';
+  color: var(--color-silver);
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.bg-blueprint {
+  background: slateblue;
+  background-image:
+    linear-gradient(rgba(255,255,255,.2) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,.2) 2px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
 
 /* ---- general ---------------------------------------- */
-html {
-  font-family: 'Titillium Web', sans-serif;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-     -moz-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
 body {
-  z-index: var(--z-index-body);
-  color: var(--color-seashell);
-  background: var(--color-mine-shaft);
+  z-index: var(--layer-body);
+  margin: 0;
 }
-
-
 
 header {
-  height: 4rem;
-  width: 100%;
-  z-index: var(--z-index-header);
+  z-index: var(--layer-header);
+  width: 100vw;
+  height: 6rem;
+  background: darkcyan;
 }
 
-/* main {
+main {
   color: var(--color-seashell);
   background: var(--color-mine-shaft);
-} */
+  padding: 1rem;
+}
 
 footer {
-  /* height: 4rem; */
-  width: 100%;
-  z-index: var(--z-index-footer);
+  z-index: var(--layer-footer);
+  width: 100vw;
+  background: var(--color-mine-shaft);
 }
 
-
-
-h1 {
+/* ---- text -------------------------- */
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Titillium Web';
-  font-weight: var(--font-weight-bold);
-  margin-bottom: 2rem;
+  font-weight: 700;
 }
+
+h1 { font-weight: 900 }
+h2 { font-weight: 700 }
+h3 { font-weight: 600 }
+h4 { font-weight: 400 }
 
 strong {
-  font-weight: var(--font-weight-black);
-}
-
-
-/* ---- articles --------------------------------------- */
-article h2 {
-  font-family: 'Titillium Web';
-  font-weight: var(--font-weight-regular);
-  margin-bottom: 1.5rem;
+  font-weight: 900;
 }
 
 article p {
   font-family: 'Titillium Web';
 }
 
+::selection {
+  color: var(--color-whiskey);
+  text-shadow: 1px 1px 0 var(--color-seashell);
+}
+
 
 /* ---- article: colors -------------------------------- */
 article#color-palettes section {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 article#color-palettes ul {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  /* justify-content: center; */
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
 }
 
 article#color-palettes li {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   width: 8rem;
   height: 8rem;
   padding: 1rem;
@@ -126,81 +159,53 @@ article#color-palettes li P {
 }
 
 
-/* ---- article: logo ---------------------------------- */
-article#logo section {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 0;
-}
-
-article#logo ul {
-  /* flex-basis: 33%; */
+/* ---- article: logotype ------------------------------ */
+article#logotype section {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+}
+
+article#logotype ul{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
   align-items: center;
+  max-height: 22rem;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-article#logo ul:nth-child(1) { background: #FFFFFF }
-article#logo ul:nth-child(2) { background: var(--color-seashell) }
-article#logo ul:nth-child(3) { background: var(--color-whiskey) }
-article#logo ul:nth-child(4) { background: var(--color-mine-shaft) }
-article#logo ul:nth-child(5) { background: #000000 }
+article#logotype ul:nth-child(1) { background: #FFFFFF }
+article#logotype ul:nth-child(2) { background: var(--color-seashell) }
+article#logotype ul:nth-child(3) { background: var(--color-whiskey) }
+article#logotype ul:nth-child(4) {
+  background: var(--color-mine-shaft);
+  border: solid 1px var(--color-tundora)
+}
+article#logotype ul:nth-child(5) { background: #000000 }
 
-article#logo li {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+article#logotype li {
   padding: 1rem;
 }
 
-article#logo span {
-  font-family: 'Titillium Web';
-  font-weight: var(--font-weight-bold);
+article#logotype li span {
+  font-weight: 700;
   font-size: 1.5rem;
 }
 
-.colorfulbg {
-  background-image: linear-gradient(to right, #d75c4d, #d86950, #d97654, #da8259, #da8d60, #cf9159, #c39555, #b69953, #969649, #749348, #4c8e4e, #02875a);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
 /* ---- signature -------------------------------------- */
-div#signature {
+section#signature {
   font-family: 'Titillium Web';
-  font-weight: var(--font-weight-bold);
+  font-weight: 700;
   font-size: 2rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  padding: .75rem 1.5rem;
-  opacity: .1;
+  padding: 0rem .5rem;
 }
 
-#signature a {
+section#signature a {
   text-decoration: none;
+  color: var(--color-whiskey);
 }
-
-/* ---- DEV_MODE --------------------------------------- */
-
-/* *, *::before, *::after { outline: solid 1px magenta } */
-/* article#logo * { outline: solid 1px magenta } */
-
-/* .bg-blueprint {
-  background: slateblue;
-  background-image:
-    linear-gradient(rgba(255,255,255,.2) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255,255,255,.2) 2px, transparent 1px),
-    linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
-  background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
-} */

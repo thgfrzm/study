@@ -1,0 +1,21 @@
+/* xs-screen width (default tier min-width < 576px) */
+
+/* sm-screen width */
+@media screen and (min-width: 576px){
+
+}
+
+/* md-screen width */
+@media screen and (min-width: 768px){
+
+}
+
+/* lg-screen width */
+@media screen and (min-width: 992px){
+
+}
+
+/* xl-screen width */
+@media screen and (min-width: 1200px){
+
+}
