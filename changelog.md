@@ -28,5 +28,5 @@ Types of changes
 - page: brand assets
 - article: typography
 - article: colors
-- article: logotype
+- sections: color palettes & color interaction
 - signature

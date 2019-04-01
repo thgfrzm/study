@@ -130,13 +130,13 @@ article p {
 
 
 /* ---- article: colors -------------------------------- */
-article#color-palettes section {
+section#color-palettes {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-article#color-palettes ul {
+section#color-palettes ul {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -144,7 +144,7 @@ article#color-palettes ul {
   padding: 0;
 }
 
-article#color-palettes li {
+section#color-palettes li {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -156,18 +156,16 @@ article#color-palettes li {
   color: var(--color-seashell);
 }
 
-article#color-palettes li P {
+section#color-palettes li P {
   margin: 0;
 }
 
-
-/* ---- article: logotype ------------------------------ */
-article#logotype section {
+section#color-interaction {
   display: flex;
   flex-direction: column;
 }
 
-article#logotype ul{
+section#color-interaction ul{
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
@@ -178,20 +176,20 @@ article#logotype ul{
   margin: 0;
 }
 
-article#logotype ul:nth-child(1) { background: #FFFFFF }
-article#logotype ul:nth-child(2) { background: var(--color-seashell) }
-article#logotype ul:nth-child(3) { background: var(--color-whiskey) }
-article#logotype ul:nth-child(4) {
+section#color-interaction ul:nth-child(1) { background: #FFFFFF }
+section#color-interaction ul:nth-child(2) { background: var(--color-seashell) }
+section#color-interaction ul:nth-child(3) { background: var(--color-whiskey) }
+section#color-interaction ul:nth-child(4) {
   background: var(--color-mine-shaft);
   border: solid 1px var(--color-tundora)
 }
-article#logotype ul:nth-child(5) { background: #000000 }
+section#color-interaction ul:nth-child(5) { background: #000000 }
 
-article#logotype li {
+section#color-interaction li {
   padding: 1rem;
 }
 
-article#logotype li span {
+section#color-interaction li span {
   font-weight: 700;
   font-size: 1.5rem;
 }
