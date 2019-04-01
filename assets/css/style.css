@@ -7,6 +7,7 @@
 
 @font-face {
   font-family: "Redacted Script";
+  font-weight: 400;
   src: url("../fonts/redacted-script-regular.woff2") format("woff2");
 }
 
@@ -56,13 +57,14 @@
 .prototype {
   font-family: 'Redacted Regular';
   color: var(--color-silver);
+  font-size: 1.5rem;
   line-height: 1.5rem;
 }
 
 .prototype-script {
   font-family: 'Redacted Script';
   color: var(--color-silver);
-  font-weight: bold;
+  font-size: 1.5rem;
   line-height: 1.5rem;
 }
 
@@ -170,7 +172,7 @@ article#logotype ul{
   flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
-  max-height: 22rem;
+  max-height: 21rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -202,10 +204,13 @@ section#signature {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  padding: 0rem .5rem;
+  padding: 0 .5rem;
+  background: var(--color-tundora);
+  border-top: solid 1px var(--color-dove-gray);
 }
 
 section#signature a {
   text-decoration: none;
-  color: var(--color-whiskey);
+  color: var(--color-seashell);
+  mix-blend-mode: soft-light;
 }
